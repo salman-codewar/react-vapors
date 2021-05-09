@@ -1,0 +1,11 @@
+overwrite: true
+schema: SCHEMA_URL ## ADD SCHEMA URL HERE
+documents: "./src/api/*.graphql"
+generates:
+  ./src/generated/index.ts:
+        plugins:
+            - 'typescript'
+            - 'typescript-operations'
+            - 'typescript-react-apollo'
+        config:
+            withHooks: true

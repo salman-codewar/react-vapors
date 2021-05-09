@@ -1,0 +1,71 @@
+{
+  "name": "react-vapors",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "^4.5.0",
+    "@apollo/client": "^3.3.11",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/styled-components": "^5.1.9",
+    "antd": "^4.15.0",
+    "graphql": "^15.5.0",
+    "moment": "^2.29.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "styled-components": "^5.2.3",
+    "typescript": "^4.0.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "develop": "concurrently \"nodemon\" \"yarn codegen --watch\"",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "codegen": "graphql-codegen --config codegen.yml",
+    "codegen:watch": "yarn generate --watch",
+    "lint": "eslint --ignore-path .gitignore",
+    "lint:fix": "yarn lint --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.21.3",
+    "@graphql-codegen/introspection": "^1.18.1",
+    "@graphql-codegen/typescript": "^1.21.1",
+    "@graphql-codegen/typescript-operations": "^1.17.15",
+    "@graphql-codegen/typescript-react-apollo": "^2.2.3",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
+    "codegen": "^0.1.0",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.19.0",
+    "eslint-plugin-react": "^7.23.2",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "standardx": "3.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  }
+}
